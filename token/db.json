@@ -1,0 +1,9 @@
+{
+    "host": "DBhost",
+    "port": "3306",
+    "user": "DBuser",
+    "passwd": "DBuser_Password",
+    "db": "DBname",
+    "todo_mst": "todo_mst",
+    "user_mst": "user_mst"
+}
