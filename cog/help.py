@@ -25,7 +25,7 @@ class Help(commands.Cog):
                 await ctx.send(embed=self.genHelp('[エラー]','コマンド`'+args[0]+'`のヘルプは存在しません'))
         else:
             embed = discord.Embed(title='ヘルプ',description='接頭辞「todo:」の後に各コマンドを入力して使用します。\n各コマンドの詳細は「todo:help [コマンド]」で確認する事が出来ます。',color=0xff7f1e)
-            embed.add_field(name='todo関連',value='```task \naddtask [タスク]] [日数]\ncomplete [タスク番号]```')
+            embed.add_field(name='todo関連',value='```task \naddtask [タスク] [日数]\ncomplete [タスク番号]```')
             embed.add_field(name='その他',value='```help [コマンド]\nreload```')
             embed.add_field(name='免責事項',value='```等botのサービスは個人が管理するVPSおよびDBサーバーによって提供されています。\n当botに対し、個人情報その他利用者が持つ機密事項(社内機密等)を登録すると、bot管理者に情報が漏洩する可能性があるためお控えください。\nまたそのような間違った利用によって生じたトラブルについて一切の責任をbot管理者は負いません。ご了承ください。```',inline=False)
             await ctx.send(embed=embed)
