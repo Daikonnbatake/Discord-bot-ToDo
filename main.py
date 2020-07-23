@@ -4,7 +4,7 @@ import os,sys
 
 bot = commands.Bot(command_prefix='todo:',help_command=None)
 CWD = str(__file__)[:-8]
-with open(CWD+'/token/bot.txt') as f:
+with open(CWD+'/meta/bot.txt') as f:
     TOKEN = f.read()
 
 cogs = os.listdir(CWD + '/cog')

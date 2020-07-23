@@ -14,7 +14,7 @@ class DBaccess:
     # 初期化
     def __init__(self):
         c=__file__
-        with open(c[0:-16]+'token/db.json','r',encoding='utf-8') as f:
+        with open(c[0:-16]+'meta/db.json','r',encoding='utf-8') as f:
             d=json.load(f)
             self.connect=db.connect(host=d['host'],port=d['port'],user=d['user'],password=d['passwd'],database=d['db'])
             self.user_mst=d['user_mst']
