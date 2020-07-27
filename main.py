@@ -7,7 +7,7 @@ CWD = str(__file__)[:-8]
 with open(CWD+'/meta/bot.txt') as f:
     TOKEN = f.read()
 with open(CWD+'/meta/admin.txt') as f:
-    ADMINS = f.read().split('\n')
+    ADMINS = list(f.read().split('\n'))
 
 cogs = os.listdir(CWD + '/cog')
 for cog in cogs:
@@ -21,7 +21,7 @@ async def on_ready():
 
 @bot.command()
 async def reload(ctx):
-    if ctx.author in ADMINS:
+    if str(ctx.author) in ADMINS:
         cogs = os.listdir(CWD + '/cog')
         allcogs = ''
         for cog in cogs:
@@ -32,6 +32,6 @@ async def reload(ctx):
         em.add_field(name='再読込されたコグ一覧',value=allcogs)
         await ctx.send(embed=em)
     else:
-        '```[権限エラー] todo:reload を実行する権限が有りません```'
+        await ctx.send('```[権限エラー] todo:reload を実行する権限が有りません```')
 
 bot.run(TOKEN)
